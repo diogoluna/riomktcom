@@ -1,168 +1,167 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio - Rio Mkt</title>
+    <title>Cases | Rio Mkt</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Montserrat:wght@400;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/design-system.css"> <!-- Fixed Path -->
+    <link rel="stylesheet" href="../css/style.css"> <!-- Fixed Path -->
+    <!-- Fixing paths since this might be used in root or sub, but wait, portfolio is in root. reverting paths. -->
+    <link rel="stylesheet" href="css/design-system.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .portfolio-item {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            group: cursor;
+        }
+
+        .portfolio-bg {
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(2, 11, 22, 0.95), rgba(2, 11, 22, 0.2));
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 30px;
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+
+        .portfolio-item:hover .portfolio-bg {
+            transform: scale(1.1);
+        }
+
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+
+        /* Abstract Placeholders */
+        .bg-abstract-1 {
+            background-image: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80');
+        }
+
+        .bg-abstract-2 {
+            background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80');
+        }
+
+        .bg-abstract-3 {
+            background-image: url('https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=800&q=80');
+        }
+    </style>
 </head>
 
 <body>
 
-    <header>
-        <nav>
-            <div style="font-size: 1.5rem; font-weight: 700; font-family: 'Outfit';">
-                RIO<span style="color: var(--neon-cyan); text-shadow: 0 0 15px var(--neon-cyan);">MKT</span>
-            </div>
-            <div style="display: flex; align-items: center;">
-                <a href="index.html" class="nav-link">Home</a>
-                <a href="quem-somos.html" class="nav-link">A Tripulação</a>
-                <a href="servicos.html" class="nav-link">Cartas Náuticas</a>
-                <a href="portfolio.html" class="nav-link" style="color: var(--neon-cyan); opacity: 1;">Diário de
-                    Bordo</a>
-                <a href="#contato" class="btn-neon"
-                    style="margin-left: 50px; font-size: 0.8rem; padding: 10px 25px;">Iniciar Rota</a>
-            </div>
-        </nav>
+    <header class="main-header">
+        <div class="container header-flex">
+            <a href="index.html" class="logo">RIO<span class="text-gradient">MKT</span></a>
+            <nav class="desktop-nav">
+                <a href="index.html">Home</a>
+                <a href="about.html">Quem Somos</a>
+                <a href="services.html">Soluções</a>
+                <a href="portfolio.html" class="active">Cases</a>
+                <a href="contact.html" class="btn btn-primary btn-small">Consultoria</a>
+            </nav>
+            <div class="mobile-toggle"><i class="fas fa-bars"></i></div>
+        </div>
     </header>
 
-    <section
-        style="padding-top: 180px; padding-bottom: 50px; background: url('assets/calm_harbor_neon.png') top center/cover;">
-        <div
-            style="background: linear-gradient(to bottom, transparent, var(--abyss-black)); position: absolute; width: 100%; height: 100%; top:0; left:0;">
-        </div>
-        <div class="container text-center" style="position: relative; z-index: 2;">
-            <p class="serif-italic" style="color: var(--neon-cyan); margin-bottom: 20px;">Captain's Log</p>
-            <h1 class="display-text" style="font-size: 4rem;">Diário de Bordo</h1>
-            <p style="color: #e2e8f0; font-size: 1.2rem; max-width: 700px; margin: 20px auto;">
-                Histórias reais de navios que saíram das águas turvas da estagnação e atracaram no porto do sucesso.
-            </p>
-        </div>
-    </section>
-
-    <section>
+    <section class="section-padding" style="padding-top: 150px;">
         <div class="container">
+            <div class="section-header text-center mb-5">
+                <h1 class="fade-in">RESULTADOS <span class="text-gradient">REAIS</span></h1>
+                <p class="text-muted fade-in delay-1">Não mostramos promessas. Mostramos performance.</p>
+            </div>
 
-            <!-- Gallery Grid -->
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 40px;">
+            <!-- Categories -->
+            <div class="text-center mb-5 fade-in delay-2"
+                style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+                <button class="btn btn-outline btn-small active"
+                    style="border-color: var(--primary); color: var(--primary);">Todos</button>
+                <button class="btn btn-outline btn-small">Performance</button>
+                <button class="btn btn-outline btn-small">Branding</button>
+                <button class="btn btn-outline btn-small">Web</button>
+            </div>
 
-                <!-- Case 1 -->
-                <div class="reveal">
-                    <div class="glass-panel" style="padding: 0; overflow: hidden; height: 100%;">
-                        <div
-                            style="height: 250px; background: url('https://images.unsplash.com/photo-1516937941344-00b4ec277cd0?q=80&w=2070&auto=format&fit=crop') center/cover;">
-                            <div
-                                style="width: 100%; height: 100%; background: rgba(0,0,0,0.3); display: flex; align-items: flex-end; padding: 20px;">
-                                <span
-                                    style="background: var(--neon-cyan); color: #000; padding: 5px 15px; font-weight: bold; font-size: 0.8rem; border-radius: 4px;">E-COMMERCE</span>
-                            </div>
-                        </div>
-                        <div style="padding: 30px;">
-                            <h3 style="font-size: 1.8rem; margin-bottom: 10px;">Adega Digital</h3>
-                            <p style="color: #94a3b8; font-size: 0.9rem; margin-bottom: 20px;">
-                                Antes, abandonavam o carrinho. Agora, compram a garrafa.
-                            </p>
-                            <div
-                                style="display: flex; gap: 20px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px;">
-                                <div>
-                                    <h4 class="text-glow" style="color: var(--neon-cyan); font-size: 1.5rem;">+1783%
-                                    </h4>
-                                    <span style="font-size: 0.8rem; color: #64748b;">Vendas</span>
-                                </div>
-                                <div>
-                                    <h4 style="color: #fff; font-size: 1.5rem;">ROI 4x</h4>
-                                    <span style="font-size: 0.8rem; color: #64748b;">Retorno</span>
-                                </div>
-                            </div>
-                        </div>
+            <!-- Portfolio Grid -->
+            <div class="portfolio-grid fade-in delay-3">
+
+                <!-- Project 1 -->
+                <div class="portfolio-item">
+                    <div class="portfolio-bg bg-abstract-1"></div>
+                    <div class="portfolio-overlay">
+                        <span
+                            style="color: var(--primary); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">E-commerce
+                            de Moda</span>
+                        <h3>Scaling ROAS to 400%</h3>
+                        <p class="text-muted" style="font-size: 0.9rem;">Meta Ads + Google Shopping</p>
                     </div>
                 </div>
 
-                <!-- Case 2 -->
-                <div class="reveal">
-                    <div class="glass-panel" style="padding: 0; overflow: hidden; height: 100%;">
-                        <div
-                            style="height: 250px; background: url('https://images.unsplash.com/photo-1599058945522-28d584b6f0ff?q=80&w=2069&auto=format&fit=crop') center/cover;">
-                            <div
-                                style="width: 100%; height: 100%; background: rgba(0,0,0,0.3); display: flex; align-items: flex-end; padding: 20px;">
-                                <span
-                                    style="background: var(--neon-purple); color: #fff; padding: 5px 15px; font-weight: bold; font-size: 0.8rem; border-radius: 4px;">LOCAL
-                                    BUSINESS</span>
-                            </div>
-                        </div>
-                        <div style="padding: 30px;">
-                            <h3 style="font-size: 1.8rem; margin-bottom: 10px;">Academia Iron</h3>
-                            <p style="color: #94a3b8; font-size: 0.9rem; margin-bottom: 20px;">
-                                De recepção vazia a fila de espera.
-                            </p>
-                            <div
-                                style="display: flex; gap: 20px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px;">
-                                <div>
-                                    <h4 class="text-glow" style="color: var(--neon-purple); font-size: 1.5rem;">10k</h4>
-                                    <span style="font-size: 0.8rem; color: #64748b;">Leads</span>
-                                </div>
-                                <div>
-                                    <h4 style="color: #fff; font-size: 1.5rem;">+32%</h4>
-                                    <span style="font-size: 0.8rem; color: #64748b;">Alunos</span>
-                                </div>
-                            </div>
-                        </div>
+                <!-- Project 2 -->
+                <div class="portfolio-item">
+                    <div class="portfolio-bg bg-abstract-2"></div>
+                    <div class="portfolio-overlay">
+                        <span
+                            style="color: var(--primary); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">Fintech
+                            B2B</span>
+                        <h3>Geração de Leads Qualificados</h3>
+                        <p class="text-muted" style="font-size: 0.9rem;">LinkedIn Ads + Landing Page</p>
                     </div>
                 </div>
 
-                <!-- Case 3 -->
-                <div class="reveal">
-                    <div class="glass-panel" style="padding: 0; overflow: hidden; height: 100%;">
-                        <div
-                            style="height: 250px; background: url('https://images.unsplash.com/photo-1579548122080-c35fd6820ecb?q=80&w=2070&auto=format&fit=crop') center/cover;">
-                            <div
-                                style="width: 100%; height: 100%; background: rgba(0,0,0,0.3); display: flex; align-items: flex-end; padding: 20px;">
-                                <span
-                                    style="background: var(--compass-gold); color: #000; padding: 5px 15px; font-weight: bold; font-size: 0.8rem; border-radius: 4px;">B2B
-                                    INDUSTRIAL</span>
-                            </div>
-                        </div>
-                        <div style="padding: 30px;">
-                            <h3 style="font-size: 1.8rem; margin-bottom: 10px;">Alusolda Tech</h3>
-                            <p style="color: #94a3b8; font-size: 0.9rem; margin-bottom: 20px;">
-                                Dominando o nicho com autoridade técnica.
-                            </p>
-                            <div
-                                style="display: flex; gap: 20px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px;">
-                                <div>
-                                    <h4 class="text-glow" style="color: var(--compass-gold); font-size: 1.5rem;">4x</h4>
-                                    <span style="font-size: 0.8rem; color: #64748b;">Orgânico</span>
-                                </div>
-                                <div>
-                                    <h4 style="color: #fff; font-size: 1.5rem;">32k</h4>
-                                    <span style="font-size: 0.8rem; color: #64748b;">Visitas</span>
-                                </div>
-                            </div>
-                        </div>
+                <!-- Project 3 -->
+                <div class="portfolio-item">
+                    <div class="portfolio-bg bg-abstract-3"></div>
+                    <div class="portfolio-overlay">
+                        <span
+                            style="color: var(--primary); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;">Construtora</span>
+                        <h3>Tour Virtual & Identidade</h3>
+                        <p class="text-muted" style="font-size: 0.9rem;">Branding + 360 Experience</p>
                     </div>
+                </div>
+
+                <!-- More placeholders -->
+                <div class="portfolio-item"
+                    style="background: rgba(255,255,255,0.03); display: flex; align-items: center; justify-content: center;">
+                    <p class="text-muted">Em breve: Mais Cases</p>
                 </div>
 
             </div>
         </div>
     </section>
 
-    <!-- Simple Scroll Reveal Script -->
-    <script>
-        window.addEventListener('scroll', reveal);
-        function reveal() {
-            var reveals = document.querySelectorAll('.reveal');
-            for (var i = 0; i < reveals.length; i++) {
-                var windowheight = window.innerHeight;
-                var revealtop = reveals[i].getBoundingClientRect().top;
-                var revealpoint = 150;
-                if (revealtop < windowheight - revealpoint) {
-                    reveals[i].classList.add('active');
-                }
-            }
-        }
-    </script>
+    <footer style="background: #000; padding: 60px 0;">
+        <div class="container text-center text-muted">
+            <p>&copy; 2025 Rio Mkt.</p>
+        </div>
+    </footer>
+
 </body>
 
 </html>

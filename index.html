@@ -4,172 +4,158 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rio Mkt | Máquinas de Vendas & Inteligência Artificial</title>
+    <title>Rio Mkt | Inteligência de Marketing & Tecnologia</title>
 
-    <!-- Fonts: Orbitron & Inter -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Orbitron:wght@400;700;900&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Montserrat:wght@400;700;900&display=swap"
         rel="stylesheet">
 
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/design-system.css">
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body>
 
-    <!-- Header / Nav -->
+    <!-- Header -->
     <header class="main-header">
-        <div class="container">
-            <div class="logo">RIO<span class="gold">MKT</span></div>
-            <nav>
-                <a href="#agents">Ecossistema</a>
-                <a href="#squads">Soluções</a>
-                <a href="#contact" class="btn-cta-small">Agendar Diagnóstico</a>
+        <div class="container header-flex">
+            <a href="index.html" class="logo">RIO<span class="text-gradient">MKT</span></a>
+            <nav class="desktop-nav">
+                <a href="index.html" class="active">Home</a>
+                <a href="about.html">Quem Somos</a>
+                <a href="services.html">Soluções</a>
+                <a href="portfolio.html">Cases</a>
+                <a href="contact.html" class="btn btn-primary btn-small">Consultoria</a>
             </nav>
+            <div class="mobile-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero Section (Expanded) -->
     <section class="hero">
-        <div class="hero-overlay"></div>
+        <div class="hero-bg-glow"></div>
         <div class="container hero-content">
-            <h1 class="fade-in-up">PARE DE QUEIMAR DINHEIRO COM <span class="gold">MARKETING BONITINHO</span>.</h1>
-            <p class="fade-in-up delay-1">Construímos Máquinas de Vendas Previsíveis usando Inteligência Artificial e
-                Agentes Autônomos.</p>
-            <div class="cta-wrapper fade-in-up delay-2">
-                <a href="#contact" class="btn-cta-primary">ATIVAR MÁQUINA DE VENDAS</a>
-                <span class="cta-sub">Somente para empresas faturando acima de R$ 50k/mês</span>
+            <p class="hero-label fade-in">ESTRATÉGIA . TECNOLOGIA . CRESCIMENTO</p>
+            <h1 class="fade-in delay-1">
+                A NOVA ERA DO <br>
+                MARKETING <span class="text-gradient">DIGITAL</span>
+            </h1>
+            <p class="hero-subtitle fade-in delay-2">
+                Unimos criatividade humana com agentes de inteligência artificial para construir máquinas de vendas
+                previsíveis.
+            </p>
+            <div class="cta-group fade-in delay-3">
+                <a href="services.html" class="btn btn-primary">EXPLORAR SOLUÇÕES</a>
+                <a href="portfolio.html" class="btn btn-outline">VER RESULTADOS</a>
             </div>
+        </div>
+
+        <!-- Abstract Tech Visual -->
+        <div class="hero-visual">
+            <div class="orb floating"></div>
         </div>
     </section>
 
-    <!-- The Problem / Authority -->
-    <section class="problem-solution section-padding">
+    <!-- Value Prop (Method) -->
+    <section class="section-padding">
         <div class="container">
-            <h2 class="section-title">O VELHO MARKETING <span class="red">MORREU</span>.</h2>
-            <div class="grid-2">
-                <div class="card-problem">
-                    <h3>🚫 O Cenário Comum</h3>
-                    <ul>
-                        <li>Você tem tráfego, mas não converte.</li>
-                        <li>Seu time de vendas demora horas para responder.</li>
-                        <li>Você depende da "criatividade" de um social media júnior.</li>
-                        <li>Seu CAC (Custo por Cliente) só aumenta.</li>
+            <div class="grid-2 align-center">
+                <div>
+                    <h2>NÃO É APENAS TRÁFEGO.<br>É <span class="text-gradient">ENGENHARIA DE RECEITA.</span></h2>
+                    <p style="margin-top: 20px; color: var(--text-muted);">
+                        A maioria das agências foca em métricas de vaidade. A Rio Mkt foca em lucro líquido.
+                        Implementamos um ecossistema onde Branding, Performance e Automação trabalham juntos.
+                    </p>
+                    <ul class="feature-list" style="margin-top: 30px;">
+                        <li><i class="fas fa-check-circle text-gradient"></i> Decisões 100% Data-Driven</li>
+                        <li><i class="fas fa-check-circle text-gradient"></i> Automações com n8n e IA</li>
+                        <li><i class="fas fa-check-circle text-gradient"></i> Creative Studio Proprietário</li>
                     </ul>
                 </div>
-                <div class="card-solution">
-                    <h3>✅ O Jeito Rio Mkt</h3>
-                    <ul>
-                        <li><strong class="gold">Agentes 24/7:</strong> I.A. que prospecta e atende enquanto você dorme.
-                        </li>
-                        <li><strong class="gold">Engenharia de Oferta:</strong> Transformamos seu produto em algo
-                            irresistível.</li>
-                        <li><strong class="gold">Dados, não Achismos:</strong> Decisões baseadas em ROI e LTV.</li>
-                        <li><strong class="gold">Ecossistema Completo:</strong> Da atração à retenção.</li>
-                    </ul>
+                <!-- Interactive Card Preview -->
+                <div class="glass-card floating">
+                    <div class="stat-item">
+                        <div class="stat-header">
+                            <span>ROI Médio (Clientes Ativos)</span>
+                            <span class="text-gradient">+430%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="fill" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div style="margin-top: 20px;" class="stat-item">
+                        <div class="stat-header">
+                            <span>Leads Qualificados/Mês</span>
+                            <span class="text-gradient">12.5k+</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="fill" style="width: 92%"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- The Agents (Ecosystem) -->
-    <section id="agents" class="agents-section section-padding">
+    <!-- Services Preview -->
+    <section class="section-padding" style="background: var(--bg-lighter);">
         <div class="container">
-            <h2 class="section-title">CONHEÇA SEUS NOVOS <span class="gold">FUNCIONÁRIOS</span>.</h2>
-            <p class="section-subtitle">Nossa holding de Agentes Autônomos trabalhando pelo seu negócio.</p>
+            <div class="section-header text-center">
+                <h2>ARSENAL COMPLETO</h2>
+                <p>Tudo o que sua empresa precisa para escalar.</p>
+            </div>
 
-            <div class="grid-3">
-                <div class="agent-card">
-                    <div class="agent-icon">🎯</div>
-                    <h3>Gestor de Tráfego</h3>
-                    <p>Otimiza campanhas no Google e Meta Ads focado estritamente em ROAS e Vendas.</p>
-                </div>
-                <div class="agent-card">
-                    <div class="agent-icon">🏹</div>
-                    <h3>Hunter B2B</h3>
-                    <p>Especialista em prospecção ativa. Encontra e aborda seus clientes ideais no LinkedIn.</p>
-                </div>
-                <div class="agent-card">
-                    <div class="agent-icon">💎</div>
-                    <h3>Arquiteto de Ofertas</h3>
-                    <p>Redesenha seu preço e sua garantia para dobrar sua conversão instantaneamente.</p>
-                </div>
-                <div class="agent-card">
-                    <div class="agent-icon">🤖</div>
-                    <h3>Arquiteto de I.A.</h3>
-                    <p>Cria automações que eliminam trabalho manual e reduzem custos operacionais.</p>
-                </div>
-                <div class="agent-card">
-                    <div class="agent-icon">👁️</div>
-                    <h3>Designer de Performance</h3>
-                    <p>Cria visuais desenhados cientificamente para parar o scroll e ganhar o clique.</p>
-                </div>
-                <div class="agent-card">
-                    <div class="agent-icon">🤝</div>
-                    <h3>Closer de Vendas</h3>
-                    <p>Fornece scripts e técnicas de negociação para fechar contratos High-Ticket.</p>
-                </div>
+            <div class="grid-3" style="margin-top: 60px;">
+                <a href="services/branding.html" class="glass-card service-preview">
+                    <i class="fas fa-fingerprint icon-lg text-gradient"></i>
+                    <h3>Branding</h3>
+                    <p>Identidade visual e posicionamento de marca.</p>
+                </a>
+                <a href="services/traffic.html" class="glass-card service-preview">
+                    <i class="fas fa-chart-line icon-lg text-gradient"></i>
+                    <h3>Tráfego Pago</h3>
+                    <p>Google Ads, Meta Ads e Estratégias de ROI.</p>
+                </a>
+                <a href="services/tour360.html" class="glass-card service-preview">
+                    <i class="fas fa-vr-cardboard icon-lg text-gradient"></i>
+                    <h3>Tour Virtual 360°</h3>
+                    <p>Imersão total para negócios físicos.</p>
+                </a>
+            </div>
+
+            <div class="text-center" style="margin-top: 40px;">
+                <a href="services.html" class="btn btn-outline">VER TODAS AS 6 SOLUÇÕES</a>
             </div>
         </div>
     </section>
 
-    <!-- Squads (Services) -->
-    <section id="squads" class="squads-section section-padding">
+    <!-- CTA -->
+    <section class="section-padding text-center">
         <div class="container">
-            <h2 class="section-title">SOLUÇÕES <span class="gold">END-TO-END</span></h2>
-
-            <div class="squad-row">
-                <div class="squad-content">
-                    <h3><span class="gold">01.</span> GROWTH SQUAD</h3>
-                    <p>Tráfego Pago, SEO e Prospecção Outbound. O motor que traz volume para o seu negócio.</p>
-                </div>
-                <div class="squad-content">
-                    <h3><span class="gold">02.</span> CONVERSION SQUAD</h3>
-                    <p>Copywriting, Web Design de Alta Conversão, VSLs e Otimização de Funil (CRO).</p>
-                </div>
-                <div class="squad-content">
-                    <h3><span class="gold">03.</span> TECH SQUAD</h3>
-                    <p>Implementação de CRM, Automação com n8n, Chatbots de I.A. e Dashboards de BI.</p>
-                </div>
+            <h2 style="max-width: 800px; margin: 0 auto;">SUA EMPRESA ESTÁ PRONTA PARA O PRÓXIMO NÍVEL?</h2>
+            <div style="margin-top: 40px;">
+                <a href="contact.html" class="btn btn-primary">FALAR COM UM ESTRATEGISTA</a>
             </div>
-        </div>
-    </section>
-
-    <!-- Footer / CTA Final -->
-    <section id="contact" class="footer-cta section-padding">
-        <div class="container text-center">
-            <h2>SUA EMPRESA ESTÁ PRONTA PARA A <span class="gold">ANTIGRAVIDADE</span>?</h2>
-            <p>Não vendemos para todo mundo. Vendemos para quem quer dominar o mercado.</p>
-            <a href="#" class="btn-cta-primary big-btn">AGENDAR REUNIÃO ESTRATÉGICA</a>
         </div>
     </section>
 
     <footer>
-        <div class="container footer-content">
-            <p>&copy; 2025 Rio Mkt. Todos os direitos reservados.</p>
-            <div class="socials">
-                <a href="#">Instagram</a>
-                <a href="#">LinkedIn</a>
+        <div class="container">
+            <div
+                style="border-top: 1px solid rgba(255,255,255,0.1); padding: 40px 0; text-align: center; color: var(--text-muted);">
+                <p>&copy; 2025 Rio Mkt. Estratégia e Tecnologia.</p>
             </div>
         </div>
     </footer>
-
-    <script>
-        // Simple Scroll Animation
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        });
-
-        document.querySelectorAll('.fade-in-up, .agent-card, .squad-content').forEach((el) => {
-            el.classList.add('hidden');
-            observer.observe(el);
-        });
-    </script>
 
 </body>
 

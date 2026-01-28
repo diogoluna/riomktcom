@@ -1,0 +1,194 @@
+/* 
+   Rio Mkt - Deep Ocean Design System
+   Architecture: Variables -> Reset -> Typography -> Utilities
+*/
+
+:root {
+    /* --- Palette: Bioluminescent Ocean --- */
+    --bg-deep: #020b16;
+    /* The Abyss */
+    --bg-card: rgba(5, 20, 36, 0.7);
+    /* Glass Dark */
+    --bg-lighter: #0a1f35;
+
+    /* Accents */
+    --primary: #00d4ff;
+    /* Electric Cyan */
+    --primary-dim: #00a3cc;
+    --secondary: #005f99;
+    /* Deep Blue */
+    --accent: #ffffff;
+    /* Pure White Highlights */
+
+    /* Text */
+    --text-main: #e0e6ed;
+    /* Off-white */
+    --text-muted: #94a3b8;
+    /* Slate 400 */
+
+    /* Gradients */
+    --grad-glow: radial-gradient(circle at center, rgba(0, 212, 255, 0.15) 0%, rgba(2, 11, 22, 0) 70%);
+    --grad-text: linear-gradient(135deg, #ffffff 0%, #00d4ff 100%);
+
+    /* Effects */
+    --glass: blur(12px) saturate(180%);
+    --glass-border: 1px solid rgba(255, 255, 255, 0.08);
+    --shadow-glow: 0 0 40px rgba(0, 212, 255, 0.15);
+
+    /* Sizes */
+    --container: 1280px;
+    --header-height: 80px;
+}
+
+/* --- Reset & Base --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-deep);
+    color: var(--text-main);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* --- Typography --- */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #fff;
+}
+
+h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    letter-spacing: -2px;
+}
+
+h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    letter-spacing: -1px;
+}
+
+h3 {
+    font-size: 1.5rem;
+    letter-spacing: -0.5px;
+}
+
+.text-gradient {
+    background: var(--grad-text);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* --- Utilities --- */
+.container {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.section-padding {
+    padding: 120px 0;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+}
+
+/* --- Components --- */
+/* Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 32px;
+    border-radius: 4px;
+    /* Minimalist sharp/rounded mix */
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: var(--bg-deep);
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
+}
+
+.btn-primary:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 40px rgba(0, 212, 255, 0.4);
+    background: #fff;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+.btn-outline:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+/* Cards (Glass) */
+.glass-card {
+    background: var(--bg-card);
+    backdrop-filter: var(--glass);
+    -webkit-backdrop-filter: var(--glass);
+    border: var(--glass-border);
+    border-radius: 16px;
+    padding: 40px;
+    transition: transform 0.4s ease, border-color 0.4s ease;
+}
+
+.glass-card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(0, 212, 255, 0.3);
+}
+
+/* --- Animations --- */
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.floating {
+    animation: float 6s ease-in-out infinite;
+}
