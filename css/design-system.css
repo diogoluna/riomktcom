@@ -1,43 +1,45 @@
 /* 
-   Rio Mkt - Deep Ocean Design System (SEO Optimized)
+   Rio Mkt - Modern Minimalist Design System (Glass 2.0)
    Architecture: Variables -> Reset -> Typography -> Utilities
 */
 
 :root {
-    /* --- Palette: Bioluminescent Ocean --- */
-    --bg-deep: #020b16;
-    /* The Abyss */
-    --bg-card: rgba(5, 20, 36, 0.7);
-    /* Glass Dark */
-    --bg-lighter: #0a1f35;
+    /* --- Palette: Deep Ocean (Refined) --- */
+    --bg-deep: #050505;
+    /* Darker, cleaner black */
+    --bg-card: rgba(255, 255, 255, 0.03);
+    /* Ultra-subtle fill */
+    --bg-lighter: #0a0a0a;
 
     /* Accents */
-    --primary: #00d4ff;
-    /* Electric Cyan */
-    --primary-dim: #00a3cc;
-    --secondary: #005f99;
-    /* Deep Blue */
+    --primary: #ef794e;
+    /* Brand Orange */
+    --primary-dim: #d65d33;
+    /* Darker Orange */
     --accent: #ffffff;
-    /* Pure White Highlights */
 
     /* Text */
-    --text-main: #e0e6ed;
-    /* Off-white */
+    --text-main: #f8fafc;
+    /* Slate 50 */
     --text-muted: #94a3b8;
     /* Slate 400 */
 
     /* Gradients */
-    --grad-glow: radial-gradient(circle at center, rgba(0, 212, 255, 0.15) 0%, rgba(2, 11, 22, 0) 70%);
-    --grad-text: linear-gradient(135deg, #ffffff 0%, #00d4ff 100%);
+    --grad-text: linear-gradient(to right, #ffffff, #ef794e);
+    --grad-glow: radial-gradient(circle at center, rgba(239, 121, 78, 0.15), transparent 70%);
 
-    /* Effects */
-    --glass: blur(12px) saturate(180%);
-    --glass-border: 1px solid rgba(255, 255, 255, 0.08);
-    --shadow-glow: 0 0 40px rgba(0, 212, 255, 0.15);
+    /* Effects (Glass 2.0) */
+    --glass: blur(20px) saturate(180%);
+    --glass-border: 1px solid rgba(255, 255, 255, 0.06);
+    /* Thinner, subtler */
+    --glass-highlight: 1px solid rgba(255, 255, 255, 0.15);
+    /* For hover */
+    --shadow-soft: 0 10px 40px -10px rgba(0, 0, 0, 0.5);
 
     /* Sizes */
-    --container: 1280px;
-    --header-height: 80px;
+    --container: 1200px;
+    /* Tighter container for readability */
+    --header-height: 90px;
 }
 
 /* --- Reset & Base --- */
@@ -49,51 +51,68 @@
 
 html {
     scroll-behavior: smooth;
+    font-size: 16px;
 }
 
 body {
     background-color: var(--bg-deep);
     color: var(--text-main);
     font-family: 'Inter', sans-serif;
-    line-height: 1.6;
+    /* Clean Sans */
+    line-height: 1.7;
+    /* Increased for breathability */
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
+    letter-spacing: -0.01em;
+    /* Modern tightness */
 }
 
-/* --- Typography --- */
+/* --- Typography (Editorial Style) --- */
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Inter', sans-serif;
+    /* Unify fonts for minimalism */
     font-weight: 700;
-    line-height: 1.2;
+    /* Bold but not heavy */
+    line-height: 1.1;
     color: #fff;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
+    letter-spacing: -0.03em;
+    /* Tight editorial tracking */
 }
 
 h1 {
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    letter-spacing: -2px;
+    font-size: clamp(3rem, 6vw, 5rem);
+    /* Bigger, bolder */
+    background: linear-gradient(to bottom, #fff, #94a3b8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* Subtle vertical gradient on text */
 }
 
 h2 {
-    font-size: clamp(2rem, 4vw, 3rem);
-    letter-spacing: -1px;
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
 }
 
 h3 {
     font-size: 1.5rem;
-    letter-spacing: -0.5px;
+    font-weight: 600;
 }
 
 p {
-    margin-bottom: 20px;
+    margin-bottom: 24px;
+    font-size: 1.125rem;
+    /* Larger body text */
+    color: var(--text-muted);
 }
 
 .text-gradient {
+    color: var(--primary);
+    /* Fallback */
     background: var(--grad-text);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -103,23 +122,24 @@ p {
 .container {
     max-width: var(--container);
     margin: 0 auto;
-    padding: 0 24px;
+    padding: 0 32px;
 }
 
 .section-padding {
-    padding: 120px 0;
+    padding: 160px 0;
+    /* Massive spacing */
 }
 
 .grid-3 {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 32px;
 }
 
 .grid-2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 60px;
+    gap: 80px;
 }
 
 .align-center {
@@ -127,77 +147,93 @@ p {
 }
 
 /* --- Components --- */
-/* Buttons */
+
+/* Modern Buttons */
 .btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 16px 32px;
-    border-radius: 4px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    padding: 18px 40px;
+    border-radius: 100px;
+    /* Pill shape */
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
     cursor: pointer;
     text-decoration: none;
-    font-size: 0.9rem;
-    border: none;
+    letter-spacing: -0.01em;
 }
 
 .btn-primary {
-    background: var(--primary);
-    color: var(--bg-deep);
-    box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
+    background: #fff;
+    color: #000;
+    border: 1px solid #fff;
 }
 
 .btn-primary:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 0 40px rgba(0, 212, 255, 0.4);
-    background: #fff;
+    background: transparent;
+    color: #fff;
+    transform: scale(1.05);
 }
 
 .btn-outline {
     background: transparent;
     border: 1px solid rgba(255, 255, 255, 0.2);
     color: #fff;
+    border-radius: 100px;
 }
 
 .btn-outline:hover {
-    border-color: var(--primary);
-    color: var(--primary);
+    border-color: #fff;
+    background: rgba(255, 255, 255, 0.05);
 }
 
-/* Cards (Glass) */
+/* Bento Card (Glass 2.0) */
 .glass-card {
     background: var(--bg-card);
     backdrop-filter: var(--glass);
     -webkit-backdrop-filter: var(--glass);
     border: var(--glass-border);
-    border-radius: 16px;
-    padding: 40px;
-    transition: transform 0.4s ease, border-color 0.4s ease;
+    border-radius: 24px;
+    /* Softer corners */
+    padding: 48px;
+    transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+    position: relative;
+    overflow: hidden;
 }
 
 .glass-card:hover {
-    transform: translateY(-10px);
-    border-color: rgba(0, 212, 255, 0.3);
+    transform: translateY(-5px) scale(1.01);
+    border: var(--glass-highlight);
+    box-shadow: var(--shadow-soft);
 }
 
-/* --- Animations --- */
+/* Icon Gradient Wrapper */
+.icon-box {
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    font-size: 1.5rem;
+}
+
+/* Animations */
 @keyframes float {
-    0% {
-        transform: translateY(0px);
+
+    0%,
+    100% {
+        transform: translateY(0);
     }
 
     50% {
-        transform: translateY(-20px);
-    }
-
-    100% {
-        transform: translateY(0px);
+        transform: translateY(-15px);
     }
 }
 
 .floating {
-    animation: float 6s ease-in-out infinite;
+    animation: float 8s ease-in-out infinite;
 }
